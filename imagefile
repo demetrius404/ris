@@ -1,0 +1,5 @@
+FROM docker.io/debian:13.1
+
+COPY install.sh .
+RUN ./install.sh
+RUN curl --insecure -fsSL https://code-server.dev/install.sh | sh

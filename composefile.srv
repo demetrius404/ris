@@ -1,0 +1,25 @@
+services:
+  php:
+    image: "php:7.2.laravel"
+    ports:
+      - "53586:53586"
+      - "8000:8000"
+    command: "bash -c /entrypoint.sh"
+    volumes:
+      - "./laravel7:/laravel7"
+      - "./laravel7/.env.example:/laravel7/.env"
+      - "./entrypoint.srv.sh:/entrypoint.sh"
+    networks:
+      - network
+  postgres:
+    image: "postgres:18.0"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+    networks:
+      - network
+
+networks:
+  network:
+    name: "compose-network"
