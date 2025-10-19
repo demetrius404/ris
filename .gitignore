@@ -1,0 +1,4 @@
+laravel7/public/storage
+laravel7/vendor
+laravel7/.env
+laravel7/.phpunit.result.cache
